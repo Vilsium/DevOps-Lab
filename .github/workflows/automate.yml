@@ -9,17 +9,8 @@ jobs:
 
         steps:
             - uses: actions/checkout@v1
-            - name: testing
+            - name: Build & Push Image
               run: |
-                ls
-                pwd
-                cat main.py
-                cat Dockerfile
-                cat requirements.txt
-
-
-            # - name: Build & Push Image
-            #   run: |
-            #     echo ${{ secrets.DOCKERTOKEN }} | docker login -u "prateekrajgautam" --password-stdin
-            #     docker build -t prateekrajgautam/upesmajorproject:v0.1 .
-            #     docker push prateekrajgautam/upesmajorproject:v0.1
+                echo ${{ secrets.DOCKERTOKEN }} | docker login -u "vilsium" --password-stdin
+                docker build -t vilsium/devops-lab:test001 .
+                docker push vilsium/devops-lab:test001
