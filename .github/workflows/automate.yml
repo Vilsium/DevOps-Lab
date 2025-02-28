@@ -12,5 +12,5 @@ jobs:
             - name: Build & Push Image
               run: |
                 echo ${{ secrets.DOCKERTOKEN }} | docker login -u "vilsium" --password-stdin
-                docker build -t vilsium/devops-lab:test001 .
-                docker push vilsium/devops-lab:test001
+                docker build -t vilsium/devops-lab:test001.1 .
+                docker push vilsium/devops-lab:test001.1
